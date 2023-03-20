@@ -14,4 +14,8 @@ export class ApiService {
   search(q: string): Observable<Meals> {
     return this.http.get<Meals>(`${this.baseUrl}/search.php`, { params: { s: q } });
   }
+
+  getByID(q: string): Observable<Meals> {
+    return this.http.get<Meals>(`${this.baseUrl}/lookup.php`, { params: { i: q } });
+  }
 }

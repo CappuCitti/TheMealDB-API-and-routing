@@ -1,1 +1,19 @@
-<p>item-pietanza works!</p>
+<div class="container">
+  <div>
+    <h3>{{ meal.strMeal }} ({{ meal.strArea }})</h3>
+    <img [src]="meal.strMealThumb" [alt]="meal.strMeal" />
+    <p>{{ meal.strInstructions }}</p>
+    <p>Origine: {{ meal.strSource }}</p>
+
+    <div>
+      <p>Guarda su YouTube</p>
+      <iframe
+        width="560"
+        height="315"
+        [src]="meal.strYoutube"
+        frameborder="1"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
