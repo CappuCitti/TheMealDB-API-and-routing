@@ -5,7 +5,7 @@ import { SearchPietanzaComponent } from './search-pietanza/search-pietanza.compo
 
 const routes: Routes = [
   { path: '', component: SearchPietanzaComponent },
-  { path: '/:id', component: ItemPietanzaComponent },
+  { path: ':id', component: ItemPietanzaComponent },
 ];
 
 @NgModule({
