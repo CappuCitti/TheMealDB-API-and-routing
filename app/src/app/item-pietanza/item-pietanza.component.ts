@@ -30,4 +30,8 @@ export class ItemPietanzaComponent implements OnInit {
       }
     });
   }
+
+  back() {
+    this.router.navigate(['/']);
+  }
 }
