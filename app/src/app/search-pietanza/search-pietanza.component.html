@@ -1,16 +1,23 @@
-<div class="container">
-  <input
-    type="text"
-    (keyup)="search($event)"
-    class="form-control"
-    placeholder="Cerca un prodotto"
-  />
+<input
+  type="text"
+  (keyup)="search($event)"
+  class="form-control mb-5"
+  placeholder="Cerca un prodotto"
+/>
 
-  <div>
-    <div *ngFor="let m of meals">
-        <img [src]="m.strMealThumb" [alt]="m.strMeal">
-        <h3>{{m.strMeal}} <a [routerLink]="[m.idMeal]">Mostra altro</a></h3>
-        <p>{{m.strInstructions}}</p>
+<div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let m of meals">
+      <div class="card">
+        <img [src]="m.strMealThumb" [alt]="m.strMeal" class="card-img-top" />
+
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ m.strMeal }} <a [routerLink]="[m.idMeal]">Mostra altro</a>
+          </h5>
+          <p class="card-text">{{ m.strInstructions }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
