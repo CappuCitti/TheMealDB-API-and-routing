@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Meals } from 'src/models/Meal.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  search(q: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/search.php`, { params: { s: q } });
+  search(q: string): Observable<Meals> {
+    return this.http.get<Meals>(`${this.baseUrl}/search.php`, { params: { s: q } });
   }
 }
